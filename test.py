@@ -16,10 +16,9 @@ I would like to go to a hospital in Japan.
 3.If I can choose more than one facility, which one is the most accessible to foreigners?
 4.What are the advantages de/merits of each facility, respectively?
 5.Please also include a GoogleMap url where we can see the route to the nearest facility
-6. Please answer step by step.
-7. Please reply in Japanese"""}
+6. Please answer step by step."""}
   ]
 )
 
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-print(completion.choices[0].message)
+print(type(json.loads(str(completion.choices[0].message))))
+print(json.loads(str(completion.choices[0].message))["content"])
