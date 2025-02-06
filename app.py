@@ -12,7 +12,7 @@ def index():
     return render_template('home.html')
 
 @app.route("/gpt/<prompt>", methods=['GET'])
-def gpt(prompt):
+def gpt(location):
     openai.organization = "[ORG]"
     openai.api_key = os.getenv("OPENAI_API_KEY")
 
@@ -20,7 +20,7 @@ def gpt(prompt):
         model="gpt-3.5-turbo",
         messages=[
             {"role": "user", "content": f"""You are a professional supporter for foreigners who have just arrived in Japan.
-I would like to go to {prompt} in Japan.
+I would like to go to {location} in Japan.
 1.Please list what I need to prepare.
 2.Who should I ask if I have any questions?
 3.If I can choose more than one facility, which one is the most accessible to foreigners?
