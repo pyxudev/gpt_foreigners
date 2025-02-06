@@ -13,7 +13,7 @@ def index():
 
 @app.route("/gpt/<prompt>", methods=['GET'])
 def gpt(prompt):
-    openai.organization = "org-7R2GbHNVDVqpskX1wNWALtl4"
+    openai.organization = "[ORG]"
     openai.api_key = os.getenv("OPENAI_API_KEY")
 
     completion = openai.ChatCompletion.create(
